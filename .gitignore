@@ -1,1 +1,53 @@
+
+# Node modules
 node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# dotenv environment variables file
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Elasticsearch and Kibana data
+elasticsearch/data/
+kibana/data/
+
+# Backup files
+*.bak
+*.swp
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# APM server generated data
+apm-server/data/
+
+# Ignore generated files
+*.tgz
+dist/
+build/
+coverage/
+
+# Others
+*.orig
+*.rej
+*.out
