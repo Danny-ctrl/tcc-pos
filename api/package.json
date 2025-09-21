@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=development node index.js",
+    "test:fluxo": "npx autocannon -c 10 -d 10 http://localhost:3000/",
+    "test:erro": "npx autocannon -c 5 -d 5 http://localhost:3000/erro",
+    "test:lento": "npx autocannon -c 5 -d 5 http://localhost:3000/lento",
+    "test:404": "npx autocannon -c 5 -d 5 http://localhost:3000/nao-encontrado"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +16,9 @@
   "dependencies": {
     "elastic-apm-node": "^4.13.0",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "autocannon": "^7.14.0",
+    "cross-env": "^10.0.0"
   }
 }

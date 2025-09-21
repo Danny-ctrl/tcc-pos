@@ -1,9 +1,11 @@
+// Inicializa o APM apenas uma vez
 const apm = require('elastic-apm-node').start({
-  serviceName: 'tcc-api',
-  serverUrl: 'http://apm-server:8200',
-  environment: 'development',
-  verifyServerCert: false,
-  logLevel: 'trace'
+  serviceName: process.env.ELASTIC_APM_SERVICE_NAME || 'tcc-api',
+  serverUrl: process.env.ELASTIC_APM_SERVER_URL || 'http://apm-server:8200',
+  secretToken: process.env.ELASTIC_APM_SECRET_TOKEN || '',
+  environment: process.env.NODE_ENV || 'development',
+  logLevel: process.env.ELASTIC_APM_LOG_LEVEL || 'info',
+  verifyServerCert: false
 });
 
 const express = require('express');
